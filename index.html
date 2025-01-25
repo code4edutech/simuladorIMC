@@ -9,80 +9,7 @@
       <meta name="author" content="Iago Barreto - Designer Gráfico e Desenvolvedor Web">
       <meta http-equiv="X-Frame-Options" content="deny">
       <title>Calculadora de IMC</title>
-      <style>
-         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff7b7b, #f1c40f); /* Novo degradê */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-         }
-
-         .container {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-         }
-
-         h1 {
-            color: #333;
-            margin-bottom: 20px;
-         }
-
-         label {
-            font-size: 14px;
-            color: #555;
-            display: block;
-            margin-bottom: 5px;
-         }
-
-         input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-         }
-
-         button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            background-color: #42a5f5;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-         }
-
-         button:hover {
-            background-color: #6e7bff;
-         }
-
-         .result {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-         }
-
-         footer {
-            position: fixed;
-            bottom: 10px;
-            text-align: center;
-            width: 100%;
-            font-size: 12px;
-            color: #fff; /* Cor do rodapé mais visível */
-            background-color: #333; /* Cor de fundo do rodapé mais escura */
-            padding: 10px 0;
-         }
-      </style>
+      <link rel="stylesheet" href="css/style.css">
    </head>
    <body>
       <div class="container">
@@ -103,33 +30,7 @@
       <footer class="footer">
          <p>© 2025 - Todos os direitos reservados.</p>
       </footer>
-      <script>
-         document.getElementById('imcForm').addEventListener('submit', function(e) {
-            e.preventDefault();
 
-            const peso = parseFloat(document.getElementById('peso').value);
-            const altura = parseFloat(document.getElementById('altura').value);
-
-            if (!peso || !altura) {
-               alert('Por favor, preencha ambos os campos.');
-               return;
-            }
-
-            const imc = peso / (altura * altura);
-            let resultado = '';
-            
-            if (imc < 18.5) {
-               resultado = `IMC: ${imc.toFixed(2)} - Abaixo do peso`;
-            } else if (imc >= 18.5 && imc < 24.9) {
-               resultado = `IMC: ${imc.toFixed(2)} - Peso normal`;
-            } else if (imc >= 25 && imc < 29.9) {
-               resultado = `IMC: ${imc.toFixed(2)} - Sobrepeso`;
-            } else {
-               resultado = `IMC: ${imc.toFixed(2)} - Obesidade`;
-            }
-
-            document.getElementById('resultadoIMC').textContent = resultado;
-         });
-      </script>
+      <script src="./js/script.js"></script>
    </body>
 </html>
